@@ -1,107 +1,222 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portafolio de Evidencias</title>
+
 <style>
     :root {
-        --primary-color: #2c3e50;
-        --accent-color: #3498db;
-        --bg-color: #f4f6f9;
-        --card-bg: #ffffff;
-        --text-color: #333;
+        --rosa: #f8c8dc;
+        --morado: #cdb4db;
+        --azul: #bde0fe;
+        --azul-oscuro: #5f72a8;
+        --texto: #3f4052;
+        --blanco: #ffffff;
     }
-    body { 
-        font-family: Arial, sans-serif; 
-        margin: 0; 
-        padding: 0; 
-        background-color: var(--bg-color);
-        color: var(--text-color);
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(
+            135deg,
+            #fde2ec,
+            #eadcf8,
+            #dceeff
+        );
+        color: var(--texto);
         line-height: 1.6;
+        min-height: 100vh;
     }
+
+    /* ENCABEZADO */
     header {
-        background-color: var(--primary-color);
-        color: white;
+        background: linear-gradient(
+            135deg,
+            #f5c6d6,
+            #cdb4db,
+            #bde0fe
+        );
+        color: #ffffff;
         text-align: center;
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
+        box-shadow: 0 4px 15px rgba(80, 70, 120, 0.15);
     }
-    /* Navegación fija */
+
+    header h1 {
+        margin: 0;
+        font-size: 2.3rem;
+        font-weight: bold;
+        text-shadow: 0 2px 5px rgba(80, 70, 120, 0.2);
+    }
+
+    header p {
+        margin: 0.5rem 0 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    /* NAVEGACIÓN */
     nav {
-        background-color: #34495e;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(8px);
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        padding: 0.5rem;
+        padding: 0.7rem;
         position: sticky;
         top: 0;
         z-index: 1000;
+        box-shadow: 0 2px 10px rgba(80, 70, 120, 0.1);
     }
+
     nav a {
-        color: white;
+        color: var(--texto);
         text-decoration: none;
-        padding: 0.5rem 1rem;
+        padding: 0.55rem 1rem;
         margin: 0.2rem;
-        border-radius: 4px;
-        transition: background 0.3s;
+        border-radius: 20px;
+        font-weight: 600;
+        transition: all 0.3s ease;
     }
+
     nav a:hover {
-        background-color: var(--accent-color);
+        background: linear-gradient(
+            90deg,
+            var(--rosa),
+            var(--morado),
+            var(--azul)
+        );
+        color: white;
+        transform: translateY(-2px);
     }
+
+    /* CONTENIDO */
     main {
         max-width: 1000px;
         margin: 2rem auto;
         padding: 0 1rem;
     }
+
     section {
-        background: white;
+        background: rgba(255, 255, 255, 0.92);
         margin-bottom: 2rem;
         padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-radius: 18px;
+        box-shadow: 0 5px 18px rgba(80, 70, 120, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.8);
     }
+
     h2 {
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--accent-color);
+        color: var(--azul-oscuro);
+        border-bottom: 3px solid;
+        border-image: linear-gradient(
+            90deg,
+            var(--rosa),
+            var(--morado),
+            var(--azul)
+        ) 1;
         padding-bottom: 0.5rem;
         margin-top: 0;
     }
-    /* Estilo para las tarjetas (cards) */
+
+    /* TARJETA DE PDF */
     .cards-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: 1fr;
         gap: 1.5rem;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
     }
+
     .card {
-        background: #fafafa;
-        border: 1px solid #ddd;
-        border-radius: 6px;
+        background: linear-gradient(
+            135deg,
+            rgba(248, 200, 220, 0.35),
+            rgba(205, 180, 219, 0.35),
+            rgba(189, 224, 254, 0.35)
+        );
+        border: 1px solid rgba(205, 180, 219, 0.6);
+        border-radius: 15px;
         padding: 1.5rem;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        text-align: center;
+        box-shadow: 0 3px 10px rgba(80, 70, 120, 0.08);
     }
+
+    .card h3 {
+        color: var(--azul-oscuro);
+        margin-top: 0;
+    }
+
+    /* BOTÓN PDF */
     .btn {
         display: inline-block;
-        background-color: var(--accent-color);
+        background: linear-gradient(
+            90deg,
+            #e8a9c4,
+            #b99bd2,
+            #91c4e9
+        );
         color: white;
-        padding: 0.5rem 1rem;
+        padding: 0.7rem 1.5rem;
         text-decoration: none;
-        border-radius: 4px;
-        margin-top: 1rem;
+        border-radius: 25px;
+        margin-top: 0.8rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 8px rgba(100, 90, 140, 0.2);
     }
+
     .btn:hover {
-        background-color: #2980b9;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 14px rgba(100, 90, 140, 0.25);
+    }
+
+    /* INFORMACIÓN PERSONAL */
+    #acerca strong {
+        color: var(--azul-oscuro);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        header p {
+            font-size: 1rem;
+        }
+
+        section {
+            padding: 1.5rem;
+        }
+
+        nav a {
+            padding: 0.45rem 0.7rem;
+            font-size: 0.9rem;
+        }
     }
 </style>
+
 </head>
+
 <body>
+
+<!-- ENCABEZADO -->
 
 <header>
     <h1>Portafolio de Evidencias</h1>
     <p>Instituto Tecnológico de Saltillo</p>
+    <p>Cómputo en la Nube</p>
 </header>
 
-<!-- Menú de navegación -->
+<!-- MENÚ DE NAVEGACIÓN -->
+
 <nav>
     <a href="#inicio">Inicio</a>
     <a href="#unidad1">Unidad 1</a>
@@ -113,91 +228,144 @@
 </nav>
 
 <main>
-    <section id="inicio">
-        <h2>Bienvenida</h2>
-        <p>Este espacio digital recopila las evidencias de aprendizaje y actividades desarrolladas a lo largo de las cinco unidades del curso.</p>
-    </section>
 
-    <!-- UNIDAD 1 (Con el PDF y sus tarjetas) -->
-    <section id="unidad1">
-        <h2>Unidad 1</h2>
-        <p>Documentación y prácticas correspondientes a la primera unidad.</p>
-        
-        <div class="cards-container">
-            <div class="card">
-                <h3>Reporte General</h3>
-                <p>Documento PDF consolidado con todas las evidencias del curso de la unidad 1.</p>
-                <!-- Asegúrate de que tu PDF se llame igual o cambia el nombre en 'href' -->
-                <a href="unidad1_evidencias.pdf" target="_blank" class="btn">Ver PDF de Unidad 1</a>
-            </div>
-            <div class="card">
-                <h3>Actividad 1</h3>
-                <p>Descripción o enlace de la primera actividad realizada.</p>
-            </div>
-            <div class="card">
-                <h3>Actividad 2</h3>
-                <p>Descripción o enlace de la segunda actividad realizada.</p>
-            </div>
+```
+<!-- INICIO -->
+<section id="inicio">
+    <h2>Bienvenida</h2>
+    <p>
+        Este espacio digital recopila las evidencias de aprendizaje
+        y actividades desarrolladas a lo largo de las cinco unidades
+        del curso de Cómputo en la Nube.
+    </p>
+</section>
+
+<!-- UNIDAD 1 -->
+<section id="unidad1">
+    <h2>Unidad 1</h2>
+    <p>
+        Evidencias correspondientes a la primera unidad.
+    </p>
+
+    <div class="cards-container">
+        <div class="card">
+            <h3>📄 Evidencias Unidad 1</h3>
+            <p>
+                Consulta el documento PDF con las evidencias de esta unidad.
+            </p>
+            <a href="unidad1_evidencias.pdf" target="_blank" class="btn">
+                Ver PDF de Unidad 1
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- UNIDAD 2 -->
-    <section id="unidad2">
-        <h2>Unidad 2</h2>
-        <p>Contenido y actividades de la segunda unidad.</p>
-        <div class="cards-container">
-            <div class="card">
-                <h3>Actividades</h3>
-                <p>Espacio para registrar las evidencias de la unidad 2.</p>
-            </div>
+<!-- UNIDAD 2 -->
+<section id="unidad2">
+    <h2>Unidad 2</h2>
+    <p>
+        Evidencias correspondientes a la segunda unidad.
+    </p>
+
+    <div class="cards-container">
+        <div class="card">
+            <h3>📄 Evidencias Unidad 2</h3>
+            <p>
+                Consulta el documento PDF con las evidencias de esta unidad.
+            </p>
+            <a href="unidad2_evidencias.pdf" target="_blank" class="btn">
+                Ver PDF de Unidad 2
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- UNIDAD 3 -->
-    <section id="unidad3">
-        <h2>Unidad 3</h2>
-        <p>Contenido y actividades de la tercera unidad.</p>
-        <div class="cards-container">
-            <div class="card">
-                <h3>Actividades</h3>
-                <p>Espacio para registrar las evidencias de la unidad 3.</p>
-            </div>
+<!-- UNIDAD 3 -->
+<section id="unidad3">
+    <h2>Unidad 3</h2>
+    <p>
+        Evidencias correspondientes a la tercera unidad.
+    </p>
+
+    <div class="cards-container">
+        <div class="card">
+            <h3>📄 Evidencias Unidad 3</h3>
+            <p>
+                Consulta el documento PDF con las evidencias de esta unidad.
+            </p>
+            <a href="unidad3_evidencias.pdf" target="_blank" class="btn">
+                Ver PDF de Unidad 3
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- UNIDAD 4 -->
-    <section id="unidad4">
-        <h2>Unidad 4</h2>
-        <p>Contenido y actividades de la cuarta unidad.</p>
-        <div class="cards-container">
-            <div class="card">
-                <h3>Actividades</h3>
-                <p>Espacio para registrar las evidencias de la unidad 4.</p>
-            </div>
+<!-- UNIDAD 4 -->
+<section id="unidad4">
+    <h2>Unidad 4</h2>
+    <p>
+        Evidencias correspondientes a la cuarta unidad.
+    </p>
+
+    <div class="cards-container">
+        <div class="card">
+            <h3>📄 Evidencias Unidad 4</h3>
+            <p>
+                Consulta el documento PDF con las evidencias de esta unidad.
+            </p>
+            <a href="unidad4_evidencias.pdf" target="_blank" class="btn">
+                Ver PDF de Unidad 4
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- UNIDAD 5 -->
-    <section id="unidad5">
-        <h2>Unidad 5</h2>
-        <p>Contenido y actividades de la quinta unidad.</p>
-        <div class="cards-container">
-            <div class="card">
-                <h3>Actividades</h3>
-                <p>Espacio para registrar las evidencias de la unidad 5.</p>
-            </div>
+<!-- UNIDAD 5 -->
+<section id="unidad5">
+    <h2>Unidad 5</h2>
+    <p>
+        Evidencias correspondientes a la quinta unidad.
+    </p>
+
+    <div class="cards-container">
+        <div class="card">
+            <h3>📄 Evidencias Unidad 5</h3>
+            <p>
+                Consulta el documento PDF con las evidencias de esta unidad.
+            </p>
+            <a href="unidad5_evidencias.pdf" target="_blank" class="btn">
+                Ver PDF de Unidad 5
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ACERCA DE MÍ -->
-    <section id="acerca">
-        <h2>Acerca de mí</h2>
-        <p><strong>Estudiante:</strong> Karyme</p>
-        <p><strong>Institución:</strong> Instituto Tecnológico de Saltillo</p>
-        <p><strong>Carrera:</strong> Ingeniería en Sistemas Computacionales / Software</p>
-        <p>Breve descripción personal sobre el enfoque académico y el desarrollo de proyectos tecnológicos.</p>
-    </section>
+<!-- ACERCA DE MÍ -->
+<section id="acerca">
+    <h2>Acerca de mí</h2>
+
+    <p>
+        <strong>Estudiante:</strong> Karyme
+    </p>
+
+    <p>
+        <strong>Institución:</strong> Instituto Tecnológico de Saltillo
+    </p>
+
+    <p>
+        <strong>Carrera:</strong> Ingeniería en Sistemas Computacionales / Software
+    </p>
+
+    <p>
+        Este portafolio reúne las evidencias y trabajos realizados
+        durante el curso de Cómputo en la Nube, mostrando el aprendizaje
+        y desarrollo de competencias adquiridas a lo largo del semestre.
+    </p>
+</section>
+```
+
 </main>
 
 </body>
 </html>
+
