@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio de Evidencias</title>
+<style>
+    :root {
+        --primary-color: #2c3e50;
+        --accent-color: #3498db;
+        --bg-color: #f4f6f9;
+        --card-bg: #ffffff;
+        --text-color: #333;
+    }
+    body { 
+        font-family: Arial, sans-serif; 
+        margin: 0; 
+        padding: 0; 
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+    header {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+    /* Navegación fija */
+    nav {
+        background-color: #34495e;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0.2rem;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+    nav a:hover {
+        background-color: var(--accent-color);
+    }
+    main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    section {
+        background: white;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 0.5rem;
+        margin-top: 0;
+    }
+    /* Estilo para las tarjetas (cards) */
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+    .card {
+        background: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 1.5rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .btn {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 1rem;
+    }
+    .btn:hover {
+        background-color: #2980b9;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Portafolio de Evidencias</h1>
+    <p>Instituto Tecnológico de Saltillo</p>
+</header>
+
+<!-- Menú de navegación -->
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#unidad1">Unidad 1</a>
+    <a href="#unidad2">Unidad 2</a>
+    <a href="#unidad3">Unidad 3</a>
+    <a href="#unidad4">Unidad 4</a>
+    <a href="#unidad5">Unidad 5</a>
+    <a href="#acerca">Acerca de mí</a>
+</nav>
+
+<main>
+    <section id="inicio">
+        <h2>Bienvenida</h2>
+        <p>Este espacio digital recopila las evidencias de aprendizaje y actividades desarrolladas a lo largo de las cinco unidades del curso.</p>
+    </section>
+
+    <!-- UNIDAD 1 (Con el PDF y sus tarjetas) -->
+    <section id="unidad1">
+        <h2>Unidad 1</h2>
+        <p>Documentación y prácticas correspondientes a la primera unidad.</p>
+        
+        <div class="cards-container">
+            <div class="card">
+                <h3>Reporte General</h3>
+                <p>Documento PDF consolidado con todas las evidencias del curso de la unidad 1.</p>
+                <!-- Asegúrate de que tu PDF se llame igual o cambia el nombre en 'href' -->
+                <a href="unidad1_evidencias.pdf" target="_blank" class="btn">Ver PDF de Unidad 1</a>
+            </div>
+            <div class="card">
+                <h3>Actividad 1</h3>
+                <p>Descripción o enlace de la primera actividad realizada.</p>
+            </div>
+            <div class="card">
+                <h3>Actividad 2</h3>
+                <p>Descripción o enlace de la segunda actividad realizada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNIDAD 2 -->
+    <section id="unidad2">
+        <h2>Unidad 2</h2>
+        <p>Contenido y actividades de la segunda unidad.</p>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Actividades</h3>
+                <p>Espacio para registrar las evidencias de la unidad 2.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNIDAD 3 -->
+    <section id="unidad3">
+        <h2>Unidad 3</h2>
+        <p>Contenido y actividades de la tercera unidad.</p>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Actividades</h3>
+                <p>Espacio para registrar las evidencias de la unidad 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNIDAD 4 -->
+    <section id="unidad4">
+        <h2>Unidad 4</h2>
+        <p>Contenido y actividades de la cuarta unidad.</p>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Actividades</h3>
+                <p>Espacio para registrar las evidencias de la unidad 4.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNIDAD 5 -->
+    <section id="unidad5">
+        <h2>Unidad 5</h2>
+        <p>Contenido y actividades de la quinta unidad.</p>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Actividades</h3>
+                <p>Espacio para registrar las evidencias de la unidad 5.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACERCA DE MÍ -->
+    <section id="acerca">
+        <h2>Acerca de mí</h2>
+        <p><strong>Estudiante:</strong> Karyme</p>
+        <p><strong>Institución:</strong> Instituto Tecnológico de Saltillo</p>
+        <p><strong>Carrera:</strong> Ingeniería en Sistemas Computacionales / Software</p>
+        <p>Breve descripción personal sobre el enfoque académico y el desarrollo de proyectos tecnológicos.</p>
+    </section>
+</main>
+
+</body>
+</html>
