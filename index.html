@@ -2,373 +2,835 @@
 
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio de Evidencias</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Evidencias | Cómputo en la Nube</title>
 
+```
 <style>
     :root {
-        --rosa: #f8c8dc;
-        --morado: #cdb4db;
-        --azul: #bde0fe;
-        --azul-oscuro: #5f72a8;
-        --texto: #3f4052;
+        --rosa: #f7c8dc;
+        --rosa-claro: #fdeaf2;
+        --morado: #cdb7e9;
+        --morado-oscuro: #8170a8;
+        --azul: #b9dcf7;
+        --azul-oscuro: #617fa8;
+        --texto: #414255;
         --blanco: #ffffff;
     }
 
     * {
         box-sizing: border-box;
+        scroll-behavior: smooth;
     }
 
     body {
-        font-family: Arial, sans-serif;
         margin: 0;
-        padding: 0;
-        background: linear-gradient(
-            135deg,
-            #fde2ec,
-            #eadcf8,
-            #dceeff
-        );
+        font-family: Arial, Helvetica, sans-serif;
         color: var(--texto);
-        line-height: 1.6;
-        min-height: 100vh;
-    }
-
-    /* ENCABEZADO */
-    header {
         background: linear-gradient(
             135deg,
-            #f5c6d6,
-            #cdb4db,
-            #bde0fe
+            #fff4f8,
+            #f4edfb,
+            #edf7ff
         );
-        color: #ffffff;
-        text-align: center;
-        padding: 3rem 1rem;
-        box-shadow: 0 4px 15px rgba(80, 70, 120, 0.15);
+        line-height: 1.6;
     }
 
-    header h1 {
-        margin: 0;
-        font-size: 2.3rem;
-        font-weight: bold;
-        text-shadow: 0 2px 5px rgba(80, 70, 120, 0.2);
-    }
+    /* =========================
+       BARRA DE NAVEGACIÓN
+    ========================= */
 
-    header p {
-        margin: 0.5rem 0 0;
-        font-size: 1.2rem;
-        font-weight: 500;
-    }
-
-    /* NAVEGACIÓN */
     nav {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(8px);
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 0.7rem;
         position: sticky;
         top: 0;
         z-index: 1000;
-        box-shadow: 0 2px 10px rgba(80, 70, 120, 0.1);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 1rem 7%;
+
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(12px);
+
+        box-shadow: 0 3px 15px rgba(80, 70, 120, 0.10);
+    }
+
+    .logo {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: var(--morado-oscuro);
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
     }
 
     nav a {
-        color: var(--texto);
         text-decoration: none;
-        padding: 0.55rem 1rem;
-        margin: 0.2rem;
-        border-radius: 20px;
+        color: var(--texto);
         font-weight: 600;
-        transition: all 0.3s ease;
+        transition: 0.3s;
     }
 
     nav a:hover {
+        color: var(--morado-oscuro);
+    }
+
+    /* =========================
+       PORTADA
+    ========================= */
+
+    .hero {
+        min-height: 88vh;
+
+        display: flex;
+        align-items: center;
+
+        padding: 5rem 10%;
+
+        background:
+            radial-gradient(
+                circle at 15% 30%,
+                rgba(247, 200, 220, 0.75),
+                transparent 30%
+            ),
+            radial-gradient(
+                circle at 85% 70%,
+                rgba(185, 220, 247, 0.75),
+                transparent 32%
+            ),
+            linear-gradient(
+                135deg,
+                #fff5f9,
+                #f1eafb,
+                #eef8ff
+            );
+    }
+
+    .hero-content {
+        max-width: 900px;
+    }
+
+    .small-title {
+        display: inline-block;
+        padding: 0.45rem 1rem;
+
+        border-radius: 30px;
+
         background: linear-gradient(
             90deg,
             var(--rosa),
             var(--morado),
             var(--azul)
         );
+
         color: white;
-        transform: translateY(-2px);
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
     }
 
-    /* CONTENIDO */
-    main {
-        max-width: 1000px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-    }
+    .hero h1 {
+        margin: 0;
+        font-size: clamp(3rem, 7vw, 6rem);
+        line-height: 0.95;
 
-    section {
-        background: rgba(255, 255, 255, 0.92);
-        margin-bottom: 2rem;
-        padding: 2rem;
-        border-radius: 18px;
-        box-shadow: 0 5px 18px rgba(80, 70, 120, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-    }
-
-    h2 {
-        color: var(--azul-oscuro);
-        border-bottom: 3px solid;
-        border-image: linear-gradient(
+        background: linear-gradient(
             90deg,
-            var(--rosa),
-            var(--morado),
-            var(--azul)
-        ) 1;
-        padding-bottom: 0.5rem;
-        margin-top: 0;
+            #d78fac,
+            #9078b8,
+            #659bc5
+        );
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
-    /* TARJETA DE PDF */
-    .cards-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .hero h2 {
+        margin: 1.5rem 0 0.3rem;
+        font-size: 1.7rem;
+        color: var(--texto);
+    }
+
+    .hero p {
+        max-width: 650px;
+        font-size: 1.1rem;
+        color: #66687a;
+    }
+
+    .hero-button {
+        display: inline-block;
         margin-top: 1.5rem;
+
+        padding: 0.85rem 1.8rem;
+
+        border-radius: 30px;
+
+        background: linear-gradient(
+            90deg,
+            #e6a8c3,
+            #a990c9,
+            #8bbfe3
+        );
+
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+
+        box-shadow: 0 5px 15px rgba(120, 100, 150, 0.20);
+
+        transition: 0.3s;
     }
 
-    .card {
+    .hero-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(120, 100, 150, 0.25);
+    }
+
+    /* =========================
+       CONTENIDO GENERAL
+    ========================= */
+
+    .container {
+        width: 84%;
+        max-width: 1150px;
+        margin: auto;
+    }
+
+    .section-title {
+        margin-bottom: 3rem;
+    }
+
+    .section-title span {
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: var(--morado-oscuro);
+        letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+        margin: 0.4rem 0;
+        font-size: 2.4rem;
+    }
+
+    .section-title p {
+        max-width: 650px;
+        color: #707180;
+    }
+
+    /* =========================
+       RESUMEN
+    ========================= */
+
+    .overview {
+        padding: 6rem 0;
+    }
+
+    .overview-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .overview-item {
+        padding: 2rem;
+
+        background: rgba(255, 255, 255, 0.85);
+
+        border-radius: 20px;
+
+        box-shadow: 0 5px 20px rgba(90, 80, 120, 0.08);
+
+        border-left: 5px solid var(--morado);
+    }
+
+    .overview-item h3 {
+        margin-top: 0;
+        color: var(--morado-oscuro);
+    }
+
+    /* =========================
+       UNIDADES
+    ========================= */
+
+    .units {
+        padding: 6rem 0;
+    }
+
+    .unit-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .unit {
+        display: grid;
+        grid-template-columns: 120px 1fr auto;
+        align-items: center;
+        gap: 2rem;
+
+        padding: 1.8rem 2rem;
+
+        background: rgba(255, 255, 255, 0.90);
+
+        border-radius: 20px;
+
+        box-shadow: 0 5px 18px rgba(80, 70, 120, 0.08);
+
+        transition: 0.3s;
+    }
+
+    .unit:hover {
+        transform: translateX(7px);
+        box-shadow: 0 8px 25px rgba(80, 70, 120, 0.13);
+    }
+
+    .unit-number {
+        font-size: 3rem;
+        font-weight: bold;
+
         background: linear-gradient(
             135deg,
-            rgba(248, 200, 220, 0.35),
-            rgba(205, 180, 219, 0.35),
-            rgba(189, 224, 254, 0.35)
+            #e8a9c4,
+            #9d86c3,
+            #83b9dc
         );
-        border: 1px solid rgba(205, 180, 219, 0.6);
-        border-radius: 15px;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: 0 3px 10px rgba(80, 70, 120, 0.08);
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
-    .card h3 {
-        color: var(--azul-oscuro);
-        margin-top: 0;
+    .unit h3 {
+        margin: 0;
+        font-size: 1.3rem;
     }
 
-    /* BOTÓN PDF */
-    .btn {
-        display: inline-block;
+    .unit p {
+        margin: 0.3rem 0 0;
+        color: #727383;
+    }
+
+    .pdf-button {
+        white-space: nowrap;
+
+        padding: 0.7rem 1.3rem;
+
+        border-radius: 25px;
+
+        text-decoration: none;
+        color: white;
+
         background: linear-gradient(
             90deg,
-            #e8a9c4,
-            #b99bd2,
-            #91c4e9
+            #e4a7c1,
+            #a78bc7,
+            #8bbce0
         );
-        color: white;
-        padding: 0.7rem 1.5rem;
-        text-decoration: none;
-        border-radius: 25px;
-        margin-top: 0.8rem;
+
         font-weight: bold;
-        transition: all 0.3s ease;
-        box-shadow: 0 3px 8px rgba(100, 90, 140, 0.2);
+
+        transition: 0.3s;
     }
 
-    .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 14px rgba(100, 90, 140, 0.25);
+    .pdf-button:hover {
+        transform: scale(1.05);
     }
 
-    /* INFORMACIÓN PERSONAL */
-    #acerca strong {
-        color: var(--azul-oscuro);
+    /* =========================
+       ACERCA DE MÍ
+    ========================= */
+
+    .about {
+        padding: 6rem 0;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-        header h1 {
-            font-size: 1.8rem;
+    .about-box {
+        display: grid;
+        grid-template-columns: 0.8fr 2fr;
+        gap: 3rem;
+        align-items: center;
+
+        padding: 3rem;
+
+        background: linear-gradient(
+            135deg,
+            rgba(247, 200, 220, 0.45),
+            rgba(205, 183, 233, 0.45),
+            rgba(185, 220, 247, 0.45)
+        );
+
+        border-radius: 25px;
+    }
+
+    .about-name {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--morado-oscuro);
+    }
+
+    .about-info p {
+        margin: 0.4rem 0;
+    }
+
+    .about-info strong {
+        color: var(--morado-oscuro);
+    }
+
+    /* =========================
+       PIE DE PÁGINA
+    ========================= */
+
+    footer {
+        text-align: center;
+
+        padding: 2rem;
+
+        background: linear-gradient(
+            90deg,
+            #f6cedd,
+            #d5c4e8,
+            #c2e0f5
+        );
+
+        color: #555568;
+    }
+
+    footer p {
+        margin: 0.2rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+        nav {
+            flex-direction: column;
+            gap: 0.8rem;
         }
 
-        header p {
-            font-size: 1rem;
+        nav ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
         }
 
-        section {
-            padding: 1.5rem;
+        .hero {
+            padding: 4rem 8%;
         }
 
-        nav a {
-            padding: 0.45rem 0.7rem;
-            font-size: 0.9rem;
+        .overview-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .unit {
+            grid-template-columns: 70px 1fr;
+        }
+
+        .pdf-button {
+            grid-column: 2;
+            width: fit-content;
+        }
+
+        .about-box {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 500px) {
+
+        .container {
+            width: 90%;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+
+        .unit {
+            grid-template-columns: 1fr;
+            gap: 0.7rem;
+        }
+
+        .pdf-button {
+            grid-column: auto;
         }
     }
 </style>
+```
 
 </head>
 
 <body>
 
-<!-- ENCABEZADO -->
-
-<header>
-    <h1>Portafolio de Evidencias</h1>
-    <p>Instituto Tecnológico de Saltillo</p>
-    <p>Cómputo en la Nube</p>
-</header>
-
-<!-- MENÚ DE NAVEGACIÓN -->
+```
+<!-- =========================
+     NAVEGACIÓN
+========================== -->
 
 <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#unidad1">Unidad 1</a>
-    <a href="#unidad2">Unidad 2</a>
-    <a href="#unidad3">Unidad 3</a>
-    <a href="#unidad4">Unidad 4</a>
-    <a href="#unidad5">Unidad 5</a>
-    <a href="#acerca">Acerca de mí</a>
+    <div class="logo">KGG · PORTAFOLIO</div>
+
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#unidades">Unidades</a></li>
+        <li><a href="#acerca">Sobre mí</a></li>
+    </ul>
 </nav>
 
-<main>
 
+<!-- =========================
+     PORTADA
+========================== -->
+
+<header class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <span class="small-title">
+            PORTAFOLIO DE EVIDENCIAS
+        </span>
+
+        <h1>
+            Cómputo<br>
+            en la Nube
+        </h1>
+
+        <h2>
+            Instituto Tecnológico de Saltillo
+        </h2>
+
+        <p>
+            Espacio digital destinado a recopilar y presentar
+            las evidencias, actividades y aprendizajes desarrollados
+            durante el curso.
+        </p>
+
+        <a href="#unidades" class="hero-button">
+            Explorar evidencias
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     RESUMEN DEL CURSO
+========================== -->
+
+<section class="overview">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>01 · INFORMACIÓN</span>
+
+            <h2>
+                Sobre este portafolio
+            </h2>
+
+            <p>
+                Este sitio reúne los trabajos realizados durante
+                el curso de Cómputo en la Nube, organizados por
+                unidad para facilitar su consulta.
+            </p>
+        </div>
+
+
+        <div class="overview-grid">
+
+            <div class="overview-item">
+                <h3>05</h3>
+                <p>
+                    Unidades de aprendizaje
+                </p>
+            </div>
+
+            <div class="overview-item">
+                <h3>PDF</h3>
+                <p>
+                    Documentación y evidencias
+                </p>
+            </div>
+
+            <div class="overview-item">
+                <h3>2026</h3>
+                <p>
+                    Periodo académico
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     UNIDADES
+========================== -->
+
+<section class="units" id="unidades">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>02 · EVIDENCIAS</span>
+
+            <h2>
+                Unidades de aprendizaje
+            </h2>
+
+            <p>
+                Selecciona una unidad para consultar
+                el documento correspondiente.
+            </p>
+
+        </div>
+
+
+        <div class="unit-list">
+
+
+            <!-- UNIDAD 1 -->
+
+            <article class="unit">
+
+                <div class="unit-number">
+                    01
+                </div>
+
+                <div>
+                    <h3>
+                        Unidad 1
+                    </h3>
+
+                    <p>
+                        Evidencias correspondientes
+                        a la primera unidad.
+                    </p>
+                </div>
+
+                <a
+                    href="unidad1.pdf"
+                    target="_blank"
+                    class="pdf-button">
+                    Ver PDF
+                </a>
+
+            </article>
+
+
+            <!-- UNIDAD 2 -->
+
+            <article class="unit">
+
+                <div class="unit-number">
+                    02
+                </div>
+
+                <div>
+                    <h3>
+                        Unidad 2
+                    </h3>
+
+                    <p>
+                        Evidencias correspondientes
+                        a la segunda unidad.
+                    </p>
+                </div>
+
+                <a
+                    href="unidad2.pdf"
+                    target="_blank"
+                    class="pdf-button">
+                    Ver PDF
+                </a>
+
+            </article>
+
+
+            <!-- UNIDAD 3 -->
+
+            <article class="unit">
+
+                <div class="unit-number">
+                    03
+                </div>
+
+                <div>
+                    <h3>
+                        Unidad 3
+                    </h3>
+
+                    <p>
+                        Evidencias correspondientes
+                        a la tercera unidad.
+                    </p>
+                </div>
+
+                <a
+                    href="unidad3.pdf"
+                    target="_blank"
+                    class="pdf-button">
+                    Ver PDF
+                </a>
+
+            </article>
+
+
+            <!-- UNIDAD 4 -->
+
+            <article class="unit">
+
+                <div class="unit-number">
+                    04
+                </div>
+
+                <div>
+                    <h3>
+                        Unidad 4
+                    </h3>
+
+                    <p>
+                        Evidencias correspondientes
+                        a la cuarta unidad.
+                    </p>
+                </div>
+
+                <a
+                    href="unidad4.pdf"
+                    target="_blank"
+                    class="pdf-button">
+                    Ver PDF
+                </a>
+
+            </article>
+
+
+            <!-- UNIDAD 5 -->
+
+            <article class="unit">
+
+                <div class="unit-number">
+                    05
+                </div>
+
+                <div>
+                    <h3>
+                        Unidad 5
+                    </h3>
+
+                    <p>
+                        Evidencias correspondientes
+                        a la quinta unidad.
+                    </p>
+                </div>
+
+                <a
+                    href="unidad5.pdf"
+                    target="_blank"
+                    class="pdf-button">
+                    Ver PDF
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ACERCA DE MÍ
+========================== -->
+
+<section class="about" id="acerca">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>03 · PERFIL</span>
+
+            <h2>
+                Sobre mí
+            </h2>
+        </div>
+
+
+        <div class="about-box">
+
+            <div class="about-name">
+                Karyme<br>
+                González Gil
+            </div>
+
+
+            <div class="about-info">
+
+                <p>
+                    <strong>Institución:</strong>
+                    Instituto Tecnológico de Saltillo
+                </p>
+
+                <p>
+                    <strong>Carrera:</strong>
+                    Ingeniería en Sistemas Computacionales / Software
+                </p>
+
+                <p>
+                    <strong>Materia:</strong>
+                    Cómputo en la Nube
+                </p>
+
+                 <p>
+                    <strong>Semestre:</strong>
+                    9°
+                </p>
+
+                 <p>
+                    <strong>Edad:</strong>
+                    22 años
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <p>
+        Portafolio de Evidencias · Cómputo en la Nube
+    </p>
+
+    <p>
+        Instituto Tecnológico de Saltillo · 2026
+    </p>
+
+</footer>
 ```
-<!-- INICIO -->
-<section id="inicio">
-    <h2>Bienvenida</h2>
-    <p>
-        Este espacio digital recopila las evidencias de aprendizaje
-        y actividades desarrolladas a lo largo de las cinco unidades
-        del curso de Cómputo en la Nube.
-    </p>
-</section>
-
-<!-- UNIDAD 1 -->
-<section id="unidad1">
-    <h2>Unidad 1</h2>
-    <p>
-        Evidencias correspondientes a la primera unidad.
-    </p>
-
-    <div class="cards-container">
-        <div class="card">
-            <h3> Evidencias Unidad 1</h3>
-            <p>
-                Consulta el documento PDF con las evidencias de esta unidad.
-            </p>
-            <a href="unidad1_evidencias.pdf" target="_blank" class="btn">
-                Ver PDF de Unidad 1
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- UNIDAD 2 -->
-<section id="unidad2">
-    <h2>Unidad 2</h2>
-    <p>
-        Evidencias correspondientes a la segunda unidad.
-    </p>
-
-    <div class="cards-container">
-        <div class="card">
-            <h3> Evidencias Unidad 2</h3>
-            <p>
-                Consulta el documento PDF con las evidencias de esta unidad.
-            </p>
-            <a href="unidad2_evidencias.pdf" target="_blank" class="btn">
-                Ver PDF de Unidad 2
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- UNIDAD 3 -->
-<section id="unidad3">
-    <h2>Unidad 3</h2>
-    <p>
-        Evidencias correspondientes a la tercera unidad.
-    </p>
-
-    <div class="cards-container">
-        <div class="card">
-            <h3> Evidencias Unidad 3</h3>
-            <p>
-                Consulta el documento PDF con las evidencias de esta unidad.
-            </p>
-            <a href="unidad3_evidencias.pdf" target="_blank" class="btn">
-                Ver PDF de Unidad 3
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- UNIDAD 4 -->
-<section id="unidad4">
-    <h2>Unidad 4</h2>
-    <p>
-        Evidencias correspondientes a la cuarta unidad.
-    </p>
-
-    <div class="cards-container">
-        <div class="card">
-            <h3> Evidencias Unidad 4</h3>
-            <p>
-                Consulta el documento PDF con las evidencias de esta unidad.
-            </p>
-            <a href="unidad4_evidencias.pdf" target="_blank" class="btn">
-                Ver PDF de Unidad 4
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- UNIDAD 5 -->
-<section id="unidad5">
-    <h2>Unidad 5</h2>
-    <p>
-        Evidencias correspondientes a la quinta unidad.
-    </p>
-
-    <div class="cards-container">
-        <div class="card">
-            <h3> Evidencias Unidad 5</h3>
-            <p>
-                Consulta el documento PDF con las evidencias de esta unidad.
-            </p>
-            <a href="unidad5_evidencias.pdf" target="_blank" class="btn">
-                Ver PDF de Unidad 5
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ACERCA DE MÍ -->
-<section id="acerca">
-    <h2>Acerca de mí</h2>
-
-    <p>
-        <strong>Estudiante:</strong> Karyme González Gil
-    </p>
-
-    <p>
-        <strong>Institución:</strong> Instituto Tecnológico Nacional de México Campus Saltillo
-    </p>
-
-    <p>
-        <strong>Carrera:</strong> Ingeniería en Sistemas Computacionales
-    </p>
-
-    <p>
-        <strong>Semestre:</strong> 9°
-    </p>
-
-    <p>
-        <strong>Edad:</strong> 22 años
-    </p>
-    
-</section>
-```
-
-</main>
 
 </body>
 </html>
-
